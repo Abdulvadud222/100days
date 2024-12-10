@@ -54,7 +54,7 @@ tp = float(input("What percentage tip would you like to give? ")) # tp stands fo
 people = float(input("How many people to split the bill? "))
 fbill = bill + (bill * (tp/100))
 result = fbill/people
-resultr = round(result, 2) # reultr stands for rounded result
+resultr = "{:.2f}".format(result) # reultr stands for rounded result
 print(f"Each person should pay: ${resultr}")
 
 
