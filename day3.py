@@ -70,73 +70,73 @@
 #     print(f"Your score is {final_number_int}.")
 
 
-# The last challenge: Creating a treasure island
-treasure_chest = (
-    "*******************************************************************************\n"
-    "          |                   |                  |                     |\n"
-    " _________|________________.=\"\"_;=.______________|_____________________|_______\n"
-    "|                   |  ,-\"_,=\"\"     `\"=.|                  |\n"
-    "|___________________|__\"=._o`\"-._        `\"=.______________|___________________\n"
-    "          |                `\"=._o`\"=._      _`\"=._                     |\n"
-    " _________|_____________________:=._o \"=._.\"_.-=\"'\"=.__________________|_______\n"
-    "|                   |    __.--\" , ; `\"=._o.\" ,-\"\"\"-._ \".   |\n"
-    "|___________________|_._\"  ,. .` ` `` ,  `\"-._\"-._   \". '__|___________________\n"
-    "          |           |o`\"=._` , \"` `; .\". ,  \"-._\"-._; ;              |\n"
-    " _________|___________| ;`-.o`\"=._; .\" ` '`.\"\\` . \"-._ /_______________|_______\n"
-    "|                   | |o;    `\"-.o`\"=._``  '` \" ,__.--o;   |\n"
-    "|___________________|_| ;     (#) `-.o `\"=.`_.--\"_o.-; ;___|___________________\n"
-    "____/______/______/___|o;._    \"      `\".o|o_.--\"    ;o;____/______/______/___\n"
-    "/______/______/______/_""\"""=._o--._     ;o|o;        ; ;/______/______/______/\n"
-    "/______/______/______/""\"""=._o--._   ;o|o;     _._;o;____/______/______/______/\n"
-    "/______/______/______/____\"=._o._; | ;_.--\"o.--\"_/______/______/______/_____/\n"
-    "/______/______/______/________\"=.o|o_.--\"\"___/______/______/______/______/___/\n"
-    "*******************************************************************************\n"
-)
-print(treasure_chest)
-print("Welcome to Treasure Island!\n"
-"Your mission is to find the treasure.")
-left_or_right = input("You are at a cross road. Where do you wanna go - (L)eft or (R)ight? Type the first letter: ").lower()
-if left_or_right not in ["l", "r"]:
-    print("Invalid letter. Restart!")
-else:
-    if left_or_right == "l":
-        print("You come to a dark lake. There is an island in the middle of the lake. You have to go there")
-        swim_or_wait = input("Type (S) to swim through the lake or type (W) to wait for a boat: ").lower()
-        if swim_or_wait not in ["s", "w"]:
-            print("Invalid letter. Restart!")
-        else:
-            if swim_or_wait == "s":
-                print("Well, the lake turns out to be acidic. You are dead!")
-            else:
-                print("You successfully crossed the lake. Now you are on the Island\n"
-                "But the problem is that there is a person guarding the treasure. You have to fight with him")
-                fight_or_wrestle = input("Choose (F) to fistfight or (W) to wrestle with him!: ").lower()
-                if fight_or_wrestle not in ["f", "w"]:
-                    print("Invalid letter. Restart!")
-                else:
-                    if fight_or_wrestle == "f":
-                        print("You won in the fistfight! The treasure is yours! Congrats)")
-                    else:
-                        print("The guard is a 10-time world champion in wrestling. You lose(")
-    else:
-        print("You found an old plane. You have two options: Fly it yourself or Call your friend who knows how to fly it.")
-        fly_or_call = input("Type (F) to fly it yourself or (C) to call: ").lower()
-        if fly_or_call not in ["f", "c"]:
-            print("Invalid letter. Restart!")
-        else:
-            if fly_or_call == "f":
-                print("You messed up bro. You hit the plane into the tree and fell. You are dead!")
-            else:
-                print("You successfully crossed the lake. Now you are on the Island\n"
-                "But the problem is that there is a person guarding the treasure. You have to fight with him")
-                fight_or_wrestle = input("Choose (F) to fistfight or (W) to wrestle with him!: ").lower()
-                if fight_or_wrestle not in ["f", "w"]:
-                    print("Invalid letter. Restart!")
-                else:
-                    if fight_or_wrestle == "f":
-                        print("You won in the fistfight! The treasure is yours! Congrats)")
-                    else:
-                        print("The guard is a 10-time world champion in wrestling. You lose(")
+# # The last challenge: Creating a treasure island
+# treasure_chest = (
+#     "*******************************************************************************\n"
+#     "          |                   |                  |                     |\n"
+#     " _________|________________.=\"\"_;=.______________|_____________________|_______\n"
+#     "|                   |  ,-\"_,=\"\"     `\"=.|                  |\n"
+#     "|___________________|__\"=._o`\"-._        `\"=.______________|___________________\n"
+#     "          |                `\"=._o`\"=._      _`\"=._                     |\n"
+#     " _________|_____________________:=._o \"=._.\"_.-=\"'\"=.__________________|_______\n"
+#     "|                   |    __.--\" , ; `\"=._o.\" ,-\"\"\"-._ \".   |\n"
+#     "|___________________|_._\"  ,. .` ` `` ,  `\"-._\"-._   \". '__|___________________\n"
+#     "          |           |o`\"=._` , \"` `; .\". ,  \"-._\"-._; ;              |\n"
+#     " _________|___________| ;`-.o`\"=._; .\" ` '`.\"\\` . \"-._ /_______________|_______\n"
+#     "|                   | |o;    `\"-.o`\"=._``  '` \" ,__.--o;   |\n"
+#     "|___________________|_| ;     (#) `-.o `\"=.`_.--\"_o.-; ;___|___________________\n"
+#     "____/______/______/___|o;._    \"      `\".o|o_.--\"    ;o;____/______/______/___\n"
+#     "/______/______/______/_""\"""=._o--._     ;o|o;        ; ;/______/______/______/\n"
+#     "/______/______/______/""\"""=._o--._   ;o|o;     _._;o;____/______/______/______/\n"
+#     "/______/______/______/____\"=._o._; | ;_.--\"o.--\"_/______/______/______/_____/\n"
+#     "/______/______/______/________\"=.o|o_.--\"\"___/______/______/______/______/___/\n"
+#     "*******************************************************************************\n"
+# )
+# print(treasure_chest)
+# print("Welcome to Treasure Island!\n"
+# "Your mission is to find the treasure.")
+# left_or_right = input("You are at a cross road. Where do you wanna go - (L)eft or (R)ight? Type the first letter: ").lower()
+# if left_or_right not in ["l", "r"]:
+#     print("Invalid letter. Restart!")
+# else:
+#     if left_or_right == "l":
+#         print("You come to a dark lake. There is an island in the middle of the lake. You have to go there")
+#         swim_or_wait = input("Type (S) to swim through the lake or type (W) to wait for a boat: ").lower()
+#         if swim_or_wait not in ["s", "w"]:
+#             print("Invalid letter. Restart!")
+#         else:
+#             if swim_or_wait == "s":
+#                 print("Well, the lake turns out to be acidic. You are dead!")
+#             else:
+#                 print("You successfully crossed the lake. Now you are on the Island\n"
+#                 "But the problem is that there is a person guarding the treasure. You have to fight with him")
+#                 fight_or_wrestle = input("Choose (F) to fistfight or (W) to wrestle with him!: ").lower()
+#                 if fight_or_wrestle not in ["f", "w"]:
+#                     print("Invalid letter. Restart!")
+#                 else:
+#                     if fight_or_wrestle == "f":
+#                         print("You won in the fistfight! The treasure is yours! Congrats)")
+#                     else:
+#                         print("The guard is a 10-time world champion in wrestling. You lose(")
+#     else:
+#         print("You found an old plane. You have two options: Fly it yourself or Call your friend who knows how to fly it.")
+#         fly_or_call = input("Type (F) to fly it yourself or (C) to call: ").lower()
+#         if fly_or_call not in ["f", "c"]:
+#             print("Invalid letter. Restart!")
+#         else:
+#             if fly_or_call == "f":
+#                 print("You messed up bro. You hit the plane into the tree and fell. You are dead!")
+#             else:
+#                 print("You successfully crossed the lake. Now you are on the Island\n"
+#                 "But the problem is that there is a person guarding the treasure. You have to fight with him")
+#                 fight_or_wrestle = input("Choose (F) to fistfight or (W) to wrestle with him!: ").lower()
+#                 if fight_or_wrestle not in ["f", "w"]:
+#                     print("Invalid letter. Restart!")
+#                 else:
+#                     if fight_or_wrestle == "f":
+#                         print("You won in the fistfight! The treasure is yours! Congrats)")
+#                     else:
+#                         print("The guard is a 10-time world champion in wrestling. You lose(")
 
 
 
