@@ -47,15 +47,15 @@
 # print(message)
 
 
-# Challenge 4: Tip calculator
-print("Welcome to the tip calculator.")
-bill = float(input("What was the total bill?  "))
-tp = float(input("What percentage tip would you like to give? ")) # tp stands for the tip percentage
-people = float(input("How many people to split the bill? "))
-fbill = bill + (bill * (tp/100))
-result = fbill/people
-resultr = "{:.2f}".format(result) # reultr stands for rounded result
-print(f"Each person should pay: ${resultr}")
+# # Challenge 4: Tip calculator
+# print("Welcome to the tip calculator.")
+# bill = float(input("What was the total bill?  "))
+# tp = float(input("What percentage tip would you like to give? ")) # tp stands for the tip percentage
+# people = float(input("How many people to split the bill? "))
+# fbill = bill + (bill * (tp/100))
+# result = fbill/people
+# resultr = "{:.2f}".format(result) # reultr stands for rounded result
+# print(f"Each person should pay: ${resultr}")
 
 
 
