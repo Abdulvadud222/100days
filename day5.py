@@ -50,7 +50,7 @@
 #         numb = "Fizz"
 #     print(numb)
 
-# #easy version
+# ###easy version
 # import random
 # import string
 
@@ -76,7 +76,7 @@
 # print(f"The generated password is {password}")
 
 
-
+###harder one
 import random
 import string
 
@@ -90,13 +90,13 @@ letters = list(string.ascii_lowercase + string.ascii_uppercase)
 symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
 numbers = ["0", "1", "2", "3", "4", "5", "6," "7", "8", "9"]
 
-rand_letters = random.choices(letters, k = letter_length) #now i get letter_length times random letters from letters by using this "k =" 
+rand_letters = random.choices(letters, k = letter_length) ###now i get letter_length times random letters from letters by using this "k =" 
 rand_symbols = random.choices(symbols, k = symbol_length)
 rand_numbers = random.choices(numbers, k = number_length)
 
-password_list = rand_letters + rand_symbols + rand_numbers
+password_list = rand_letters + rand_symbols + rand_numbers ###this puts all three lists into one list
 
-random.shuffle(password_list)
+random.shuffle(password_list) ###this shuffles the list
 passwordhard = "".join(password_list)
 print(f"The generated password is {passwordhard}")
 
