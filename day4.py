@@ -112,7 +112,7 @@ import random
 
 
 
-
+import random
 
 rock_pic = '''
     _______
@@ -142,28 +142,7 @@ scissors_pic = '''
 '''
 
 
-choices = ['''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-''', '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-''', '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-''']
+choices = [rock_pic, paper_pic, scissors_pic]
 number = random.randint(0, 2)
 computer_choice = choices[number]
 player_choice = input("Welcome to Rock, Paper, Scissors game!\n"
@@ -173,6 +152,7 @@ if player_choice not in ["r", "p", "s"]:
 else:
     #if a player chooses rock
     if player_choice == "r":
+        player_choice = rock_pic
         if computer_choice == player_choice:
             print(f"You chose: {rock_pic}\n"
             f"The computer chose: {computer_choice}\n"
@@ -185,7 +165,8 @@ else:
             print(f"You chose: {rock_pic}\n"
             f"The computer chose: {computer_choice}\n"
             "You win!")
-    elif player_choice == "p":
+    if player_choice == "p":
+        player_choice = paper_pic
         if computer_choice == player_choice:
             print(f"You chose: {paper_pic}\n"
             f"The computer chose: {computer_choice}\n"
@@ -198,7 +179,8 @@ else:
             print(f"You chose: {paper_pic}\n"
             f"The computer chose: {computer_choice}\n"
             "You win!")
-    elif player_choice == "s":
+    if player_choice == "s":
+        player_choice = scissors_pic
         if computer_choice == player_choice:
             print(f"You chose: {scissors_pic}\n"
             f"The computer chose: {computer_choice}\n"
