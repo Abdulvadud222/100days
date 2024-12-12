@@ -76,29 +76,29 @@
 # print(f"The generated password is {password}")
 
 
-###harder one
-import random
-import string
+# ###harder one
+# import random
+# import string
 
-print("Welcome to the PyPassword Generator!")
-letter_length = int(input("How many letters would you like in your password: "))
-symbol_length = int(input("How many symbols would you like: "))
-number_length = int(input("How many numbers would you like: "))
+# print("Welcome to the PyPassword Generator!")
+# letter_length = int(input("How many letters would you like in your password: "))
+# symbol_length = int(input("How many symbols would you like: "))
+# number_length = int(input("How many numbers would you like: "))
 
 
-letters = list(string.ascii_lowercase + string.ascii_uppercase)
-symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
-numbers = ["0", "1", "2", "3", "4", "5", "6," "7", "8", "9"]
+# letters = list(string.ascii_lowercase + string.ascii_uppercase)
+# symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+# numbers = ["0", "1", "2", "3", "4", "5", "6," "7", "8", "9"]
 
-rand_letters = random.choices(letters, k = letter_length) ###now i get letter_length times random letters from letters by using this "k =" 
-rand_symbols = random.choices(symbols, k = symbol_length)
-rand_numbers = random.choices(numbers, k = number_length)
+# rand_letters = random.choices(letters, k = letter_length) ###now i get letter_length times random letters from letters by using this "k =" 
+# rand_symbols = random.choices(symbols, k = symbol_length)
+# rand_numbers = random.choices(numbers, k = number_length)
 
-password_list = rand_letters + rand_symbols + rand_numbers ###this puts all three lists into one list
+# password_list = rand_letters + rand_symbols + rand_numbers ###this puts all three lists into one list
 
-random.shuffle(password_list) ###this shuffles the list
-passwordhard = "".join(password_list)
-print(f"The generated password is {passwordhard}")
+# random.shuffle(password_list) ###this shuffles the list
+# passwordhard = "".join(password_list)
+# print(f"The generated password is: {passwordhard}")
 
 
 
