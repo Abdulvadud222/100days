@@ -102,7 +102,7 @@ while another_bidder != "no":
       "\n" "Today, this amazing watch is in Auction")
     name_of_bidder = input("What's your name: ")
     amount_of_bid = int(input("What's your bid: $"))
-    another_bidder = input("Is there any another person who wants to bid? Yes or No\n").lower()
+    another_bidder = input("Is there any other person who wants to bid? Yes or No\n").lower()
     winner_bidder(name=name_of_bidder, amount=amount_of_bid)
     clear_console()
 
