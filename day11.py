@@ -15,8 +15,8 @@ def black_jack():
     | \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
     |  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
     `-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
-        |  \/ K|                            _/ |                
-        `------'                           |__/           
+          |  \/ K|                            _/ |                
+          `------'                           |__/           
     """
     print(logo)
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -39,13 +39,19 @@ def black_jack():
         """Return a random card from the deck"""
         random_index = random.randint(0, len(cards) - 1)
         random_card = cards[random_index]
-        return random_card
+        return random_card, random_index
     user_cards = []
     computer_cards = []
+    user_cards_symbol = []
+    computer_cards_symbol = []
     is_game_over = False
     for i in range(2):
-        user_cards.append(deal_card())
-        computer_cards.append(deal_card())
+        user_card, user_index = deal_card()
+        user_cards.append(user_card)
+        user_cards_symbol.append(cards_dic[user_index])
+        computer_card, computer_index = deal_card()
+        computer_cards.append(computer_card)
+        computer_cards_symbol.append(cards_dic[computer_index])
     def calculate_score(list_of_cards):
         if 11 in list_of_cards:
             if 10 in list_of_cards:
@@ -60,20 +66,24 @@ def black_jack():
     while not is_game_over:
         user_score = calculate_score(list_of_cards=user_cards)
         computer_score = calculate_score(list_of_cards=computer_cards)
-        print(f"Here are your cards: {user_cards}, current_score: {user_score}")
-        print(f"Here is the computer's card: {computer_cards[0]}")
+        print(f"Here are your cards: {user_cards_symbol}, current_score: {user_score}")
+        print(f"Here is the computer's card: {computer_cards_symbol[0]}")
 
         if user_score  == 0 or computer_score == 0 or user_score > 21:
             is_game_over = True
         else:
             again = input("Do you wanna draw another card? Type y for yes or n for no:\n").lower()
             if again == "y":
-                user_cards.append(deal_card())
+                user_card, user_index = deal_card()
+                user_cards.append(user_card)
+                user_cards_symbol.append(cards_dic[user_index])
             else:
                 is_game_over = True
     if user_score <= 21:
         while computer_score != 0 and computer_score < 17:
-            computer_cards.append(deal_card())
+            computer_card, computer_index = deal_card()
+            computer_cards.append(computer_card)
+            computer_cards_symbol.append(cards_dic[computer_index])
             computer_score = calculate_score(computer_cards)
     def compare(user_score, computer_score):
         if user_score == computer_score:
@@ -90,8 +100,8 @@ def black_jack():
             else:
                 message = "You lose!"
         return message
-    print(f"Your final hand: {user_cards}, final score: {user_score}")
-    print(f"computer's final hand: {computer_cards}, final score: {computer_score}")
+    print(f"Your final hand: {user_cards_symbol}, final score: {user_score}")
+    print(f"computer's final hand: {computer_cards_symbol}, final score: {computer_score}")
     print(compare(user_score, computer_score))
 
 should_continue = True
@@ -107,10 +117,3 @@ while should_continue:
     else:
         print("Invalid input! Exiting...")
         should_continue = False
-    
-
-
-
-
-
-
