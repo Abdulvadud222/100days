@@ -1,6 +1,8 @@
 import os
 import platform
 
+os.environ['TERM'] = 'xterm'
+
 def clear_console():
     if platform.system() == "Windows":
         os.system("cls")  
@@ -332,11 +334,11 @@ data = [
 
 
 
-def random_star(prev_index = None):
+def random_star(previous_index = None):
     import random
     while True:
         rand_index = random.randint(0, len(data) - 1)
-        if rand_index != prev_index:
+        if rand_index != previous_index:
             break
     star_dic = data[rand_index]
     star_name = star_dic["name"]
@@ -395,7 +397,7 @@ while can_play:
             A_descript = B_descript
             A_country = B_country
             A_number = B_number
-            name, descript, country, number = random_star()
+            name, descript, country, number, prev_index_B = random_star(prev_index)
             B_name = name
             B_descript = descript
             B_country = country
