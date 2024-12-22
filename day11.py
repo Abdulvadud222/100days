@@ -6,7 +6,8 @@ def clear_console():
         os.system("cls")  
     else:
         os.system("clear")
-def black_jack(): 
+def black_jack():
+    global user_score, computer_score
     import random
     logo = """
     .------.            _     _            _    _            _    
@@ -55,7 +56,7 @@ def black_jack():
     def calculate_score(list_of_cards):
         if 11 in list_of_cards:
             if 10 in list_of_cards:
-                return 0
+                return 21
         overall_score = sum(list_of_cards)
         if 11 in list_of_cards:
             if overall_score > 21:
@@ -69,8 +70,12 @@ def black_jack():
         print(f"Here are your cards: {user_cards_symbol}, current_score: {user_score}")
         print(f"Here is the computer's card: {computer_cards_symbol[0]}")
 
-        if user_score  == 0 or computer_score == 0 or user_score > 21:
+        if user_score == 21:
             is_game_over = True
+            print("You have a BlackJack! You win!")
+        elif user_score > 21:
+            is_game_over = True
+            print("You are busted!")
         else:
             again = input("Do you wanna draw another card? Type y for yes or n for no:\n").lower()
             if again == "y":
@@ -80,16 +85,18 @@ def black_jack():
             else:
                 is_game_over = True
     if user_score <= 21:
-        while computer_score != 0 and computer_score < 17:
+        while computer_score != 21 and computer_score < 17:
             computer_card, computer_index = deal_card()
             computer_cards.append(computer_card)
             computer_cards_symbol.append(cards_dic[computer_index])
             computer_score = calculate_score(computer_cards)
     def compare(user_score, computer_score):
+        global should_continue
         if user_score == computer_score:
             message = "It is a draw"
         elif computer_score == 0:
             message = "Computer has a BlackJack. You lose!"
+            should_continue = False
         elif user_score > 21:
             message = "You are busted. You lose!"
         elif computer_score > 21:

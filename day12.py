@@ -24,13 +24,15 @@ def easy_version():
         else:
             if guess > number:
                 if lives > 0:
-                    guess = int(input(f"Too high.\nYou have {lives} attempts remaining to guess a number\nGuess again: "))
                     lives -= 1
+                    guess = int(input(f"Too high.\nYou have {lives} attempts remaining to guess a number\nGuess again: "))
+                    
                 
             else:
                 if lives > 0:
-                    guess = int(input(f"Too low.\nYou have {lives} attempts remaining to guess a number\nGuess again: "))
                     lives -= 1
+                    guess = int(input(f"Too low.\nYou have {lives} attempts remaining to guess a number\nGuess again: "))
+                    
                 
         if lives == 0:
             print("You ran out of attempts( You lose!"
@@ -42,7 +44,6 @@ def hard_version():
     number = random.randint(1, 100)
     lives = 5
     guess = int(input(f"You have {lives} attempts remaining to guess a number\nMake a guess: "))
-    lives -= 1
     while lives:
         if guess == number:
             print("Congratulations! You win!"
@@ -51,13 +52,15 @@ def hard_version():
         else:
             if guess > number:
                 if lives > 0:
-                    guess = int(input(f"Too high.\nYou have {lives} attempts remaining to guess a number\nGuess again: "))
                     lives -= 1
+                    guess = int(input(f"Too high.\nYou have {lives} attempts remaining to guess a number\nGuess again: "))
+                    
                 
             else:
                 if lives > 0:
-                    guess = int(input(f"Too low.\nYou have {lives} attempts remaining to guess a number\nGuess again: "))
                     lives -= 1
+                    guess = int(input(f"Too low.\nYou have {lives} attempts remaining to guess a number\nGuess again: "))
+                    
                 
         if lives == 0:
             print("You ran out of attempts( You lose!"
