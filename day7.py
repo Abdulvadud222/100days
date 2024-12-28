@@ -122,6 +122,7 @@ for _ in range(word_length):
     display += "_"
 
 while not end_of_game:
+    print(f"The word: {' '.join(display)}")
     guess = input("Guess a letter: ").lower()
 
     #TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
@@ -129,29 +130,31 @@ while not end_of_game:
     clear_console()
     if guess in guesses:
         print(f"You have already guessed the letter: {guess}")
-    guesses.append(guess)
-    #Check guessed letter
-    for position in range(word_length):
-        letter = chosen_word[position]
-        if letter == guess:
-            display[position] = letter
+    else:
+        guesses.append(guess)
+        #Check guessed letter
+        for position in range(word_length):
+            letter = chosen_word[position]
+            if letter == guess:
+                display[position] = letter
 
-    #Check if user is wrong.
-    if guess not in chosen_word:
-        #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
-        print(f"{guess} is not in the word!")
-        lives -= 1
-        if lives == 0:
+        #Check if user is wrong.
+        if guess not in chosen_word:
+            #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
+            print(f"{guess} is not in the word!")
+            lives -= 1
+            if lives == 0:
+                end_of_game = True
+                print("You have run out of lives. You lose!")
+                print(f"The word was {chosen_word}")
+
+        #Join all the elements in the list and turn it into a String.
+        print(f"{' '.join(display)}")
+
+        #Check if user has got all letters.
+        if "_" not in display:
             end_of_game = True
-            print("You have run out of lives. You lose!")
+            print("You win!")
 
-    #Join all the elements in the list and turn it into a String.
-    print(f"{' '.join(display)}")
-    
-    #Check if user has got all letters.
-    if "_" not in display:
-        end_of_game = True
-        print("You win!")
-
-    #TODO-2: - Import the stages from hangman_art.py and make this error go away.
-    print(stages[lives])
+        #TODO-2: - Import the stages from hangman_art.py and make this error go away.
+        print(stages[lives])
