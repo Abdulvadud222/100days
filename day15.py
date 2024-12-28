@@ -24,6 +24,12 @@ resource_list[0] = resource_dic["Water"]
 resource_list[1] = resource_dic["Milk"]
 resource_list[2] = resource_dic["Coffee"]
 resource_list[3] = resource_dic["Money"]
+def sync_resource_list():
+    resource_list[0] = resource_dic["Water"]
+    resource_list[1] = resource_dic["Milk"]
+    resource_list[2] = resource_dic["Coffee"]
+    resource_list[3] = resource_dic["Money"]
+
 
 def expresso():
     expresso_water = 50
@@ -60,7 +66,7 @@ def comparer(prompt, resource_list, expresso_list, latte_list, cappuccino_list):
         else:
             return 0
     elif prompt == "l":
-        if resource_list[0] >= latte_list[0] and resource_list[1] >= latte_list[1] and latte_list[2] >= resource_list[2]:
+        if resource_list[0] >= latte_list[0] and resource_list[1] >= latte_list[1] and resource_list[2] >= latte_list[2]:
             return "enough"
         else:
             return 0
@@ -107,7 +113,9 @@ while not turn_off:
             if your_money >= expresso_list[2]:
                 refund = round((your_money - expresso_list[2]),2)
                 resource_dic["Water"] -= expresso_list[0]
-                resource_dic["Milk"] -= expresso_list[1]
+                resource_dic["Coffee"] -= expresso_list[1]
+                resource_dic["Money"] += 2.5
+                sync_resource_list()
                 print("Here is your coffee ☕️. Enjoy it!")
                 print(f"Here is your refunded money. ${refund}")
             else:
@@ -122,6 +130,8 @@ while not turn_off:
                 resource_dic["Water"] -= latte_list[0]
                 resource_dic["Milk"] -= latte_list[1]
                 resource_dic["Coffee"] -= latte_list[2]
+                resource_dic["Money"] += 4
+                sync_resource_list()
                 print("Here is your coffee ☕️. Enjoy it!")
                 print(f"Here is your refunded money. ${refund}")
             else:
@@ -136,10 +146,11 @@ while not turn_off:
                 resource_dic["Water"] -= cappuccino_list[0]
                 resource_dic["Milk"] -= cappuccino_list[1]
                 resource_dic["Coffee"] -= cappuccino_list[2]
+                resource_dic["Money"] += 4
+                sync_resource_list()
                 print("Here is your coffee ☕️. Enjoy it!")
                 print(f"Here is your refunded money. ${refund}")
             else:
-                refund = round((your_money - cappuccino_list[3]),2)
                 print("Not enough coins. Money is refunded")
                 print(f"Here is your refunded money. ${your_money}")
     else:
@@ -152,6 +163,7 @@ while not turn_off:
     elif prompt == "r":
         print(resource_list[4])
         prompt = input("What would you like? Type 'e' for expresso, 'l' for latte, and 'c' for cappuccino: ").lower()
+        sync_resource_list()
     else:
         turn_off = False
 
