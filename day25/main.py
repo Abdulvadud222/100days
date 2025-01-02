@@ -91,6 +91,8 @@
 from turtle import Turtle, Screen
 
 import pandas
+
+
 turtle = Turtle()
 screen = Screen()
 
@@ -120,6 +122,8 @@ while game_is_on:
 
     answer_state = screen.textinput(title=f"{correct_guesses}/50  Guess the State",
                                     prompt="The name of the State:").title()
+
+
     state_row = full_list[full_list.state == answer_state]
     state_row_list = list(full_list.state.to_list())
 
@@ -145,6 +149,7 @@ while game_is_on:
         game_is_on = False
 
 screen.exitonclick()
+
 
 
 
