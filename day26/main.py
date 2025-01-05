@@ -75,9 +75,27 @@ import pandas
 alphabet = pandas.read_csv("nato_phonetic_alphabet.csv")
 
 alphabet_dict = {row.letter: row.code for (index, row) in alphabet.iterrows()}
+###Using while loop
+# user_word = input("Enter a word: ").upper()
+# problem = True
+# while problem:
+#     try:
+#         result = [alphabet_dict[letter] for letter in user_word]
+#     except KeyError:
+#         print("Sorry, only letters in the alphabet, please.")
+#         user_word = input("Enter a word: ").upper()
+#     else:
+#         print(result)
+#         problem = False
 
-user_word = input("Enter a word: ").upper()
-
-result = [alphabet_dict[letter] for letter in user_word]
-
-print(result)
+###Using recursion
+def generator():
+    user_word = input("Enter a word: ").upper()
+    try:
+        result = [alphabet_dict[letter] for letter in user_word]
+    except KeyError:
+        print("Sorry, only letters in the alphabet, please.")
+        generator()
+    else:
+        print(result)
+generator()
