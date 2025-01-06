@@ -4,6 +4,7 @@ import string
 import random
 import pyperclip
 import json
+
 #----------------------------------------------Searcher----------------------------------------------------------------#
 def searcher():
     website = website_entry.get()
@@ -64,9 +65,9 @@ def save():
         try:
             with open("data.json", "r") as data:
                 ###Reading old data
-                dict = json.load(data)
+                dic = json.load(data)
                 ###Updating old data
-                dict.update(new_data)
+                dic.update(new_data)
         except FileNotFoundError:
             with open("data.json", "w") as data:
                 ###Saving old data
@@ -86,8 +87,9 @@ def save():
 window = Tk()
 window.title("Password Manager")
 window.config(pady=40, padx=40)
+# Load the image using the corrected path
 canvas = Canvas(width=200, height=200)
-pic = PhotoImage(file="logo.png")
+pic = PhotoImage(file="logo.png")  # Use the dynamically determined path
 canvas.create_image(100, 100, image=pic)
 canvas.grid(row=0, column=1)
 ###Labels
